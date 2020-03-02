@@ -19,4 +19,5 @@ Route::get('/accueil', function(){
     return view('pages/index');
 });
 
+Route
 
