@@ -18,8 +18,9 @@ Route::get('/', function () {
 Route::get('/accueil', function(){
     return view('pages/index');
 });
+Route::get('/error', function(){
+    return view('pages/error');
+});
 
-Route
-rrr
 
 
