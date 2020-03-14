@@ -18,5 +18,8 @@ Route::get('/', function () {
 Route::get('/accueil', function(){
     return view('pages/index');
 });
+Route::get('/signup', function(){
+    return view('pages/eleve');
+});
 
 
