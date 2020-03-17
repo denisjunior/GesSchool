@@ -14,7 +14,7 @@ class ElevesController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages/eleve');
     }
 
     /**
@@ -35,7 +35,27 @@ class ElevesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //Inscription
+        if ($request->isMethod('post')) {
+            $eleve = new eleve();
+            $eleve->matricule = "ok";
+            $eleve->nom =  "ok";
+            $eleve->datenaiss = "ok";
+            $eleve->lieuNaiss = "ok";
+            $eleve->sexe = "ok";
+            $eleve->ecoleprovenance = "ok";
+            $eleve->nomPere = "ok";
+            $eleve->contactPere = "ok";
+            $eleve->nomMere = "ok";
+            $eleve->contactMere = "ok";
+            $eleve->numTel = "ok";
+            $eleve->quartier = "ok";
+            $eleve->serie = "ok";
+            $eleve->user_id = "ok";
+            $eleve->save();
+
+        }
+        return redirect('/eleve');
     }
 
     /**
