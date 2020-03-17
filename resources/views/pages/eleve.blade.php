@@ -8,40 +8,42 @@
                     </div>
                     <div class="ibox-body">
                         <div class="row">
-                            <div class="col-md-6">
+                            <div class="col-md-4">
+                                <div class="form-group mb-4">
+                                    <label>Matricule</label>
+                                    <input class="form-control" type="text" name="matricule" id="matricule">
+                                </div>
                                 <div class="form-group mb-4">
                                     <label>Nom</label>
-                                    <input class="form-control" type="text" placeholder="Nom de Famille">
+                                    <input class="form-control" type="text" placeholder="Nom Elève" name="nom" id="nom">
                                 </div>
                                 <div class="form-group mb-4">
                                     <label>Prénoms</label>
-                                    <input class="form-control" type="text" placeholder="Prénoms">
+                                    <input class="form-control" type="text" placeholder="Prénoms Elève" name="prenom" id="prenom">
                                 </div>
                                 <div class="form-group" id="date_1">
                                     <label class="font-normal"></label>
                                     <div class="input-group date">
                                         <span class="input-group-addon bg-white"><i class="fa fa-calendar"></i></span>
-                                        <input class="form-control" type="text" value="04/12/2017">
+                                        <input class="form-control" type="text" value="04/12/2017" name="datenaiss" id="datenaiss">
                                     </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label>Lieu de Naissance</label>
+                                    <input class="form-control" type="text" placeholder="Lieu de Naissance" name="lieuNaiss" id="lieuNaiss">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4">
                                 <div class="form-group mb-4">
-                                    <label>Location</label>
-                                    <div class="input-group-icon input-group-icon-left">
-                                        <span class="input-icon input-icon-left"><i class="ti-location-pin font-16"></i></span>
-                                        <input class="form-control" type="text" placeholder="Enter Location">
-                                    </div>
+                                    <label>Ecole Provenance</label>
+                                    <input class="form-control" type="text" placeholder="Ecole de provenance" name="ecoleprovenance" id="ecoleprovenance">
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Password</label>
-                                    <div class="input-group-icon input-group-icon-left">
-                                        <span class="input-icon input-icon-left"><i class="ti-lock"></i></span>
-                                        <input class="form-control" type="password" placeholder="Enter Password">
-                                    </div>
+                                    <label>Nom du Père</label>
+                                    <input class="form-control" type="text" placeholder="Nom du père" name="nomPere" id="nomPere">
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Phone number</label>
+                                    <label>Contact du Père</label>
                                     <div class="input-group">
                                         <div class="input-group-btn">
                                             <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">+61<i class="fa fa-angle-down ml-1"></i></button>
@@ -51,21 +53,64 @@
                                                 <a class="dropdown-item" href="javascript:;">+7</a>
                                             </div>
                                         </div>
-                                        <input class="form-control" type="text" placeholder="Enter Phone">
+                                        <input class="form-control" type="text" placeholder="Enter Phone" name="contactPere" id="contactPere">
                                     </div>
-                                    <span class="help-block">It will be required to verify your account.</span>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label>Nom de la Mère</label>
+                                    <input class="form-control" type="text" placeholder="Nom de la mère" name="nomMere" id="nomMere">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label>Contact de la mère</label>
+                                    <div class="input-group">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">+61<i class="fa fa-angle-down ml-1"></i></button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item" href="javascript:;">+61</a>
+                                                <a class="dropdown-item" href="javascript:;">+1</a>
+                                                <a class="dropdown-item" href="javascript:;">+7</a>
+                                            </div>
+                                        </div>
+                                        <input class="form-control" type="text" placeholder="Enter Phone" name="contactMere" id="contactMere">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group mb-4">
+                                    <div class="form-group mb-4">
+                                        <label>Numéro Elève</label>
+                                        <div class="input-group">
+                                            <div class="input-group-btn">
+                                                <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">+61<i class="fa fa-angle-down ml-1"></i></button>
+                                                <div class="dropdown-menu">
+                                                    <a class="dropdown-item" href="javascript:;">+61</a>
+                                                    <a class="dropdown-item" href="javascript:;">+1</a>
+                                                    <a class="dropdown-item" href="javascript:;">+7</a>
+                                                </div>
+                                            </div>
+                                            <input class="form-control" type="text" placeholder="Enter Phone" name="numTel" id="numTel">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label>Quartier</label>
+                                    <input class="form-control" type="text" placeholder="Quartier" name="quartier" id="quartier">
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label>Série</label>
+                                    <input class="form-control" type="text" placeholder="Série" name="serie" id="serie">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group mb-0">
-                            <label>Account Type</label>
+                            <label>Sexe</label>
                             <div class="mt-1">
                                 <label class="radio radio-inline radio-grey radio-primary">
-                                    <input type="radio" name="d" checked>
-                                    <span class="input-span"></span>Personal</label>
+                                    <input type="radio" name="sexe" id="sexe" checked>
+                                    <span class="input-span"></span>Masculin</label>
                                 <label class="radio radio-inline radio-grey radio-primary">
-                                    <input type="radio" name="d">
-                                    <span class="input-span"></span>Corporate</label>
+                                    <input type="radio" name="sexe" id="sexe">
+                                    <span class="input-span"></span>Féminin</label>
                             </div>
                             <span class="help-block">Select one of 2 types of accounts.</span>
                         </div>
