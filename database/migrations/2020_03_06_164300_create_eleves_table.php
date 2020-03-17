@@ -15,7 +15,7 @@ class CreateElevesTable extends Migration
     {
         Schema::create('eleves', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('matricule', 10);
+            $table->string('matricule', 10);
             $table->string('nom', 100);
             $table->string('prenom', 100);
             $table->date('datenaiss');
@@ -29,9 +29,8 @@ class CreateElevesTable extends Migration
             $table->integer('numTel');
             $table->string('quartier',100);
             $table->char('serie',3);
-            $table->unsignedBigInteger('user_id');
-
-             $table->foreign('classe_id')->references('id')->on('classe');
+            $table->unsignedBigInteger('classe_id');
+            $table->foreign('classe_id')->references('id')->on('classes')->onDelete('cascade');
             $table->timestamps();
         });
     }
