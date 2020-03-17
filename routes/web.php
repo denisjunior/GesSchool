@@ -11,7 +11,6 @@
 |
 */
 
-use App\Http\Controllers\ElevesController;
 
 Route::get('/', function () {
     return view('welcome');
