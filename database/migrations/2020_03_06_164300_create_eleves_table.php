@@ -29,6 +29,7 @@ class CreateElevesTable extends Migration
             $table->integer('numTel');
             $table->string('quartier',100);
             $table->char('serie',3);
+            $table->string('photo')->nullable();
             $table->unsignedBigInteger('classe_id');
             $table->foreign('classe_id')->references('id')->on('classes')->onDelete('cascade');
             $table->timestamps();

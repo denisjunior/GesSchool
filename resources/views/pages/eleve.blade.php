@@ -2,16 +2,17 @@
 @section('content')
 <br>
             <div class="ibox">
-                <form action="javascript:;">
+                <form action="{{ route('signup') }}" method="POST">
+                @csrf
                     <div class="ibox-head">
-                        <div class="ibox-title">formulaire d'inscription</div>
+                        <div class="ibox-title">Formulaire d'inscription d'un nouveau éleve</div>
                     </div>
                     <div class="ibox-body">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group mb-4">
                                     <label>Matricule</label>
-                                    <input class="form-control" type="text" name="matricule" id="matricule">
+                                    <input class="form-control" placeholder="Matricule" type="text" name="matricule" id="matricule">
                                 </div>
                                 <div class="form-group mb-4">
                                     <label>Nom</label>
@@ -22,10 +23,10 @@
                                     <input class="form-control" type="text" placeholder="Prénoms Elève" name="prenom" id="prenom">
                                 </div>
                                 <div class="form-group" id="date_1">
-                                    <label class="font-normal"></label>
+                                    <label class="font-normal">Date de Naissance</label>
                                     <div class="input-group date">
                                         <span class="input-group-addon bg-white"><i class="fa fa-calendar"></i></span>
-                                        <input class="form-control" type="text" value="04/12/2017" name="datenaiss" id="datenaiss">
+                                        <input class="form-control" type="date"  name="datenaiss" id="datenaiss">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
@@ -45,15 +46,8 @@
                                 <div class="form-group mb-4">
                                     <label>Contact du Père</label>
                                     <div class="input-group">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">+61<i class="fa fa-angle-down ml-1"></i></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="javascript:;">+61</a>
-                                                <a class="dropdown-item" href="javascript:;">+1</a>
-                                                <a class="dropdown-item" href="javascript:;">+7</a>
-                                            </div>
-                                        </div>
-                                        <input class="form-control" type="text" placeholder="Enter Phone" name="contactPere" id="contactPere">
+
+                                        <input class="form-control" type="text" placeholder="Contact du père" name="contactPere" id="contactPere">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
@@ -63,14 +57,6 @@
                                 <div class="form-group mb-4">
                                     <label>Contact de la mère</label>
                                     <div class="input-group">
-                                        <div class="input-group-btn">
-                                            <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">+61<i class="fa fa-angle-down ml-1"></i></button>
-                                            <div class="dropdown-menu">
-                                                <a class="dropdown-item" href="javascript:;">+61</a>
-                                                <a class="dropdown-item" href="javascript:;">+1</a>
-                                                <a class="dropdown-item" href="javascript:;">+7</a>
-                                            </div>
-                                        </div>
                                         <input class="form-control" type="text" placeholder="Enter Phone" name="contactMere" id="contactMere">
                                     </div>
                                 </div>
@@ -80,15 +66,8 @@
                                     <div class="form-group mb-4">
                                         <label>Numéro Elève</label>
                                         <div class="input-group">
-                                            <div class="input-group-btn">
-                                                <button class="btn btn-outline-secondary dropdown-toggle" data-toggle="dropdown">+61<i class="fa fa-angle-down ml-1"></i></button>
-                                                <div class="dropdown-menu">
-                                                    <a class="dropdown-item" href="javascript:;">+61</a>
-                                                    <a class="dropdown-item" href="javascript:;">+1</a>
-                                                    <a class="dropdown-item" href="javascript:;">+7</a>
-                                                </div>
-                                            </div>
-                                            <input class="form-control" type="text" placeholder="Enter Phone" name="numTel" id="numTel">
+
+                                <input class="form-control" type="text" placeholder="Numéro télephone" name="numTel" id="numTel">
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +77,21 @@
                                 </div>
                                 <div class="form-group mb-4">
                                     <label>Série</label>
-                                    <input class="form-control" type="text" placeholder="Série" name="serie" id="serie">
+                                    <select class="form-control" type="text" placeholder="Série" name="serie" id="serie">
+                                    <option value="1">A4</option>
+                                    <option value="2">D</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-4">
+                                    <label>Classe</label>
+                                    <select class="form-control" type="text" placeholder="Classe" name="classe" id="classe">
+                                        <option value="1">Terminale</option>
+                                        <option value="2">Premiere</option>
+                                    </select>
+                                </div>
+                                <div class="form-group mb-4">
+                                <label>Photo éleve</label>
+                            <input class="form-control" type="file" placeholder="photo" name="photo" id="photo">
                                 </div>
                             </div>
                         </div>
@@ -106,18 +99,18 @@
                             <label>Sexe</label>
                             <div class="mt-1">
                                 <label class="radio radio-inline radio-grey radio-primary">
-                                    <input type="radio" name="sexe" id="sexe" checked>
+                                    <input type="radio" name="sexe" value="M" id="sexe" checked>
                                     <span class="input-span"></span>Masculin</label>
                                 <label class="radio radio-inline radio-grey radio-primary">
-                                    <input type="radio" name="sexe" id="sexe">
+                                    <input type="radio" name="sexe" value="F" id="sexe">
                                     <span class="input-span"></span>Féminin</label>
                             </div>
                             <span class="help-block">Select one of 2 types of accounts.</span>
                         </div>
                     </div>
                     <div class="ibox-footer">
-                        <button class="btn btn-primary mr-2" type="button">Submit</button>
-                        <button class="btn btn-outline-secondary" type="reset">Cancel</button>
+                        <button class="btn btn-primary mr-2" type="submit">Enregistrer</button>
+                        <button class="btn btn-outline-secondary" type="reset">Annuler</button>
                     </div>
                 </form>
             </div>

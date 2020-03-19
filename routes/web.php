@@ -20,5 +20,5 @@ Route::get('/accueil', function(){
     return view('pages/index');
 });
 Route::get('signup','EleveController@index');
-
+Route::post('signup','EleveController@store')->name('signup');
 
