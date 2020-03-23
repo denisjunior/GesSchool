@@ -128,6 +128,11 @@
                             </li>
                             <li class="heading">FEATURES</li>
 
+                            <li>
+                                <a href="{{url('parametres')}}"><i class="sidebar-item-icon ti-settings"></i>
+                                    <span class="nav-label">Paramètre</span>
+                                    </a>
+                            </li>
 
                         </ul>
 

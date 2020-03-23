@@ -22,3 +22,7 @@ Route::get('/accueil', function(){
 Route::get('signup','EleveController@index');
 Route::post('signup','EleveController@store')->name('signup');
 
+route::get('/parametres', function(){
+    return view('pages/parametre');
+});
+
