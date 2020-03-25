@@ -2,7 +2,7 @@
 @section('content')
 <br>
             <div class="ibox">
-                <form action="{{ route('signup') }}" method="POST">
+                <form action="{{ route('signup') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                     <div class="ibox-head">
                         <div class="ibox-title">Formulaire d'inscription d'un nouveau éleve</div>
@@ -11,51 +11,51 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="form-group mb-4">
-                                    <label>Matricule</label>
+                                    <label>Matricule <span style="color: red;">*</span></label>
                                     <input class="form-control" placeholder="Matricule" type="text" name="matricule" id="matricule">
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Nom</label>
+                                    <label>Nom <span style="color: red;">*</span></label>
                                     <input class="form-control" type="text" placeholder="Nom Elève" name="nom" id="nom">
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Prénoms</label>
+                                    <label>Prénoms <span style="color: red;">*</span></label>
                                     <input class="form-control" type="text" placeholder="Prénoms Elève" name="prenom" id="prenom">
                                 </div>
                                 <div class="form-group" id="date_1">
-                                    <label class="font-normal">Date de Naissance</label>
+                                    <label class="font-normal">Date de Naissance <span style="color: red;">*</span></label>
                                     <div class="input-group date">
                                         <span class="input-group-addon bg-white"><i class="fa fa-calendar"></i></span>
                                         <input class="form-control" type="date"  name="datenaiss" id="datenaiss">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Lieu de Naissance</label>
+                                    <label>Lieu de Naissance <span style="color: red;">*</span></label>
                                     <input class="form-control" type="text" placeholder="Lieu de Naissance" name="lieuNaiss" id="lieuNaiss">
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-group mb-4">
-                                    <label>Ecole Provenance</label>
+                                    <label>Ecole Provenance <span style="color: red;">*</span></label>
                                     <input class="form-control" type="text" placeholder="Ecole de provenance" name="ecoleprovenance" id="ecoleprovenance">
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Nom du Père</label>
+                                    <label>Nom du Père <span style="color: red;">*</span></label>
                                     <input class="form-control" type="text" placeholder="Nom du père" name="nomPere" id="nomPere">
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Contact du Père</label>
+                                    <label>Contact du Père <span style="color: red;">*</span></label>
                                     <div class="input-group">
 
                                         <input class="form-control" type="text" placeholder="Contact du père" name="contactPere" id="contactPere">
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Nom de la Mère</label>
+                                    <label>Nom de la Mère <span style="color: red;">*</span></label>
                                     <input class="form-control" type="text" placeholder="Nom de la mère" name="nomMere" id="nomMere">
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Contact de la mère</label>
+                                    <label>Contact de la mère <span style="color: red;">*</span></label>
                                     <div class="input-group">
                                         <input class="form-control" type="text" placeholder="Enter Phone" name="contactMere" id="contactMere">
                                     </div>
@@ -64,7 +64,7 @@
                             <div class="col-md-4">
                                 <div class="form-group mb-4">
                                     <div class="form-group mb-4">
-                                        <label>Numéro Elève</label>
+                                        <label>Numéro Elève <span style="color: red;">*</span></label>
                                         <div class="input-group">
 
                                 <input class="form-control" type="text" placeholder="Numéro télephone" name="numTel" id="numTel">
@@ -72,31 +72,41 @@
                                     </div>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Quartier</label>
+                                    <label>Quartier <span style="color: red;">*</span></label>
                                     <input class="form-control" type="text" placeholder="Quartier" name="quartier" id="quartier">
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Série</label>
+                                    <label>Série <span style="color: red;">*</span></label>
                                     <select class="form-control" type="text" placeholder="Série" name="serie" id="serie">
                                     <option value="1">A4</option>
                                     <option value="2">D</option>
                                     </select>
                                 </div>
                                 <div class="form-group mb-4">
-                                    <label>Classe</label>
+                                    <label>Classe <span style="color: red;">*</span></label>
                                     <select class="form-control" type="text" placeholder="Classe" name="classe" id="classe">
                                         <option value="1">Terminale</option>
                                         <option value="2">Premiere</option>
                                     </select>
                                 </div>
                                 <div class="form-group mb-4">
-                                <label>Photo éleve</label>
-                            <input class="form-control" type="file" placeholder="photo" name="photo" id="photo">
+                                <label>Photo éleve <span style="color: red;">*</span></label>
+                            <input class="form-control" type="file" placeholder="photo" name="photo" id="inpFile">
+
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group mb-0">
-                            <label>Sexe</label>
+                        <div class="row">
+                            <div class="col-md-4">
+                            <label>Photo éleve <span style="color: red;">*</span></label>
+                            <div class="image-preview" id="imagePreview">
+                                <img src="" alt="Image preview" class="image-preview__image">
+                            <span class="image_preview__default-text">Affichage photo</span>
+                            </div>
+                            </div>
+
+                            <div class="col-md-4">
+                            <label>Sexe <span style="color: red;">*</span></label>
                             <div class="mt-1">
                                 <label class="radio radio-inline radio-grey radio-primary">
                                     <input type="radio" name="sexe" value="M" id="sexe" checked>
@@ -105,8 +115,9 @@
                                     <input type="radio" name="sexe" value="F" id="sexe">
                                     <span class="input-span"></span>Féminin</label>
                             </div>
-                            <span class="help-block">Select one of 2 types of accounts.</span>
+                            <span class="help-block">Sélectionnez un des deux type de sexe.</span>
                         </div>
+                    </div>
                     </div>
                     <div class="ibox-footer">
                         <button class="btn btn-primary mr-2" type="submit">Enregistrer</button>
@@ -164,5 +175,6 @@
         </div>
     </div>
 </div>
+
 @endsection
 

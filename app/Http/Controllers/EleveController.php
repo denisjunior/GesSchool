@@ -68,7 +68,7 @@ class EleveController extends Controller
                 $destination_path = public_path('/profil');
                 $image->move($destination_path, $new_image_name);
                 $eleve->photo =  $new_image_name;
-                dd($new_image_name);
+                //dd($new_image_name);
             }
            // dd($request->all());
             $eleve->save();
