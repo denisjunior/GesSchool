@@ -137,7 +137,7 @@
                             <li>
                                 <a href="javascript:;"><i class="sidebar-item-icon ti-user"></i>
                                     <span class="nav-label">ELEVES</span><i class="fa fa-angle-left arrow"></i></a>
-                                <ul class="nav-2-level collapse in">
+                                <ul class="nav-2-level collapse">
                                     <li>
                                     <a class="" href="{{url('signup')}}">Inscription</a>
                                     </li>
@@ -145,6 +145,11 @@
                             </li>
                             <li class="heading">FEATURES</li>
 
+                            <li>
+                                <a href="{{url('parametres')}}"><i class="sidebar-item-icon ti-settings"></i>
+                                    <span class="nav-label">Paramètre</span>
+                                    </a>
+                            </li>
 
                         </ul>
 
