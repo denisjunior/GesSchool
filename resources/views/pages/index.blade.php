@@ -1,9 +1,6 @@
-
 @extends('layouts.app')
 @section('content')
-
         <!-- START PAGE CONTENT-->
-        <div class="page-content fade-in-up">
             <div class="row mb-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="card mb-4">
@@ -45,8 +42,5 @@
                     </div>
                 </div>
             </div>
-
-        </div>
         <!-- END PAGE CONTENT-->
-
 @endsection

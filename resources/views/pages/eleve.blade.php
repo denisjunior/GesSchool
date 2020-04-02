@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-<br>
             <div class="ibox">
                 <form action="{{ route('signup') }}" method="POST" enctype="multipart/form-data">
                 @csrf
@@ -175,6 +174,5 @@
         </div>
     </div>
 </div>
-
 @endsection
 

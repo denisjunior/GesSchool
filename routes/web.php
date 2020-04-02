@@ -25,4 +25,7 @@ Route::post('signup','EleveController@store')->name('signup');
 route::get('/parametres', function(){
     return view('pages/parametre');
 });
+route::get('/notes', function(){
+    return view('pages/note');
+});
 

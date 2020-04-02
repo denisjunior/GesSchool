@@ -36,7 +36,8 @@
             }
         </style>
     </head>
-<body>
+
+<body class="fixed-navbar">
         <div class="page-wrapper">
                 <!-- START HEADER-->
                 <header class="header">
@@ -128,9 +129,9 @@
                 <nav class="page-sidebar" id="sidebar">
                     <div id="sidebar-collapse">
                         <ul class="side-menu metismenu">
-
                                 <li class="active">
-                                <a href="{{url('accueil')}}"><i class="sidebar-item-icon ti-home"></i>
+
+                                     <a href="{{url('accueil')}}"><i class="sidebar-item-icon ti-home"></i>
                                         <span class="nav-label">ACCUEIL</span>
                                     </a>
                                 </li>
@@ -139,16 +140,16 @@
                                     <span class="nav-label">ELEVES</span><i class="fa fa-angle-left arrow"></i></a>
                                 <ul class="nav-2-level collapse">
                                     <li>
-                                    <a class="" href="{{url('signup')}}">Inscription</a>
+                                        <a href="{{url('signup')}}">Inscription</a>
+                                        <a href="{{url('notes')}}">Notes</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="heading">FEATURES</li>
 
                             <li>
                                 <a href="{{url('parametres')}}"><i class="sidebar-item-icon ti-settings"></i>
                                     <span class="nav-label">Paramètre</span>
-                                    </a>
+                                </a>
                             </li>
 
                         </ul>
@@ -158,11 +159,13 @@
                 <!-- END SIDEBAR-->
 
                 <div class="content-wrapper">
+                    <div class="page-content fade-in-up">
 
                         @yield('content')
+                    </div>
 
 
-                <footer class="page-footer">
+                     <footer class="page-footer">
                         <div class="font-13">2018 © <b>Adminca</b> - Save your time, choose the best</div>
                         <div>
                             <a class="px-3 pl-4" href="http://themeforest.net/item/adminca-responsive-bootstrap-4-3-angular-4-admin-dashboard-template/20912589" target="_blank">Purchase</a>
@@ -615,30 +618,24 @@
 
 
 <script>
-    const inpFile = document.getElementById("inpFile");
+     const inpFile = document.getElementById("inpFile");
     const previewContainer = document.getElementById("imagePreview");
     const previewImage = previewContainer.querySelector(".image-preview__image");
     const previewDefaultText = previewContainer.querySelector(".image_preview__default-text");
-
         inpFile.addEventListener("change", function(){
             const file = this.files[0];
-
             console.log(file);
             if(file){
                 const reader = new FileReader();
             previewDefaultText.style.display = "none";
             previewImage.style.display = "block";
-
             reader.addEventListener("load", function(){
                     console.log(this);
                     previewImage.setAttribute("src",this.result);
             });
-
             reader.readAsDataURL(file);
-
             }
         })
-
 
     $(function() {
         $('#datatable').DataTable({
